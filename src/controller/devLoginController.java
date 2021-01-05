@@ -11,6 +11,7 @@ import util.EmptyUtils;
 import javax.annotation.Resource;
 import javax.naming.NoPermissionException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/dev")
@@ -53,5 +54,12 @@ public class devLoginController {
 
         }
         return "devlogin";
+    }
+    @RequestMapping("logout")
+    public String logOut(HttpSession session)
+    {
+        /*删除session*/
+      session.removeAttribute("devUserSession");
+      return "devlogin";
     }
 }
