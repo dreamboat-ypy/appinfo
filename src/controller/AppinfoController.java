@@ -18,6 +18,8 @@ public class AppinfoController {
     {
       List<AppInfo> appInfoList=appInfoService.findAppinfoList();
       request.setAttribute("appInfoList",appInfoList);
+        System.out.println("a");
         return "developer/appinfolist";
+
     }
 }
